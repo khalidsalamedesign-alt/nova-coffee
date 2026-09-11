@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Original single-file export (kept locally, replaced by index.html + css/ + js/)
+index.html.html

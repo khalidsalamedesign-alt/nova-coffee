@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NOVA COFFEE — specialty coffee roastery in Damascus. Single-origin coffee, roasted to the moment it burns brightest.">
+<title>NOVA COFFEE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Mono:wght@400;500&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" dir="ltr" lang="en">
+
+<!-- ================= ILLUSTRATION SPRITE ================= -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- coffee bean, outline -->
+    <symbol id="i-bean" viewBox="0 0 120 84">
+      <g transform="rotate(-22 60 42)" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+        <ellipse cx="60" cy="42" rx="53" ry="31"/>
+        <path d="M20 46 C 36 27, 48 54, 60 42 C 72 30, 84 55, 100 39"/>
+      </g>
+    </symbol>
+
+    <!-- coffee bean, solid (crease knocked out with a stroke) -->
+    <symbol id="i-bean-solid" viewBox="0 0 120 84">
+      <g transform="rotate(-22 60 42)">
+        <ellipse cx="60" cy="42" rx="53" ry="31" fill="currentColor"/>
+        <path d="M20 46 C 36 27, 48 54, 60 42 C 72 30, 84 55, 100 39"
+              fill="none" stroke="rgba(0,0,0,.34)" stroke-width="6" stroke-linecap="round"/>
+      </g>
+    </symbol>
+
+    <!-- coffee cherry branch, etched -->
+    <symbol id="i-branch" viewBox="0 0 200 260">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M100 256 C 97 214, 103 176, 99 128 C 96 88, 101 52, 100 18"/>
+        <g transform="translate(100 84) rotate(-32) scale(.9)">
+          <path d="M0 0 C 22 -24, 58 -22, 80 0 C 58 24, 22 26, 0 0 Z"/>
+          <path d="M5 0 C 28 2, 56 2, 74 0"/>
+          <path d="M24 -11 L32 0 M42 -13 L49 0 M58 -10 L64 0 M24 11 L32 0 M42 13 L49 0 M58 10 L64 0" stroke-width="2.2"/>
+        </g>
+        <g transform="translate(100 84) rotate(212) scale(.9)">
+          <path d="M0 0 C 22 -24, 58 -22, 80 0 C 58 24, 22 26, 0 0 Z"/>
+          <path d="M5 0 C 28 2, 56 2, 74 0"/>
+          <path d="M24 -11 L32 0 M42 -13 L49 0 M58 -10 L64 0 M24 11 L32 0 M42 13 L49 0 M58 10 L64 0" stroke-width="2.2"/>
+        </g>
+        <g transform="translate(99 146) rotate(-24) scale(.78)">
+          <path d="M0 0 C 22 -24, 58 -22, 80 0 C 58 24, 22 26, 0 0 Z"/>
+          <path d="M5 0 C 28 2, 56 2, 74 0"/>
+        </g>
+        <g transform="translate(99 146) rotate(204) scale(.78)">
+          <path d="M0 0 C 22 -24, 58 -22, 80 0 C 58 24, 22 26, 0 0 Z"/>
+          <path d="M5 0 C 28 2, 56 2, 74 0"/>
+        </g>
+        <path d="M78 190 C 84 180, 92 174, 98 172"/>
+        <path d="M122 200 C 116 190, 108 182, 100 176"/>
+        <path d="M100 232 C 100 218, 100 208, 99 198"/>
+        <circle cx="76" cy="208" r="18"/>
+        <circle cx="124" cy="216" r="16"/>
+        <circle cx="100" cy="245" r="14"/>
+        <path d="M68 202 C 71 198, 75 196, 79 196" stroke-width="2.2"/>
+        <path d="M117 211 C 120 207, 123 206, 126 206" stroke-width="2.2"/>
+      </g>
+    </symbol>
+
+    <!-- roaster drum -->
+    <symbol id="i-roaster" viewBox="0 0 150 130">
+      <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M46 8 L104 8 L92 32 L58 32 Z"/>
+        <rect x="16" y="32" width="118" height="60" rx="30"/>
+        <circle cx="76" cy="62" r="21"/>
+        <circle cx="76" cy="62" r="12"/>
+        <path d="M97 62 h16"/>
+        <path d="M44 92 v20 M108 92 v20"/>
+        <path d="M30 112 h92"/>
+        <path d="M64 44 C 60 50, 68 54, 64 60" stroke-width="2.4"/>
+      </g>
+    </symbol>
+
+    <!-- burr grinder -->
+    <symbol id="i-grinder" viewBox="0 0 120 150">
+      <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 22 h88"/>
+        <path d="M24 22 L96 22 L80 58 L40 58 Z"/>
+        <circle cx="60" cy="10" r="6"/>
+        <path d="M60 16 v6"/>
+        <path d="M40 58 h40 v50 h-40 z"/>
+        <path d="M44 74 h32" stroke-width="2.4"/>
+        <path d="M30 108 h60 v28 h-60 z"/>
+        <path d="M50 122 h20" stroke-width="2.4"/>
+      </g>
+    </symbol>
+
+    <!-- gooseneck kettle -->
+    <symbol id="i-kettle" viewBox="0 0 150 120">
+      <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M48 46 h48 a12 12 0 0 1 12 12 v28 a16 16 0 0 1 -16 16 h-40 a16 16 0 0 1 -16 -16 v-28 a12 12 0 0 1 12 -12 z"/>
+        <path d="M60 46 v-9 h26 v9"/>
+        <circle cx="73" cy="30" r="5"/>
+        <path d="M48 60 C 26 62, 18 36, 32 22"/>
+        <path d="M108 58 C 130 62, 130 88, 108 92"/>
+        <path d="M34 14 C 30 8, 38 6, 34 0" stroke-width="2.2"/>
+      </g>
+    </symbol>
+
+    <!-- cup from above with rosetta -->
+    <symbol id="i-cup" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="60" cy="60" r="53"/>
+        <circle cx="60" cy="60" r="43"/>
+        <path d="M60 26 C 52 44, 52 78, 60 94"/>
+        <path d="M60 44 C 48 46, 40 54, 37 63 M60 44 C 72 46, 80 54, 83 63" stroke-width="2.6"/>
+        <path d="M60 58 C 50 60, 44 66, 42 73 M60 58 C 70 60, 76 66, 78 73" stroke-width="2.6"/>
+        <path d="M60 72 C 53 74, 49 78, 47 83 M60 72 C 67 74, 71 78, 73 83" stroke-width="2.6"/>
+      </g>
+    </symbol>
+
+    <!-- retail bag -->
+    <symbol id="i-bag" viewBox="0 0 120 150">
+      <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 42 h80 v92 a8 8 0 0 1 -8 8 h-64 a8 8 0 0 1 -8 -8 z"/>
+        <path d="M20 42 L36 20 h48 L100 42"/>
+        <path d="M36 20 h48" stroke-width="2.6"/>
+        <rect x="37" y="72" width="46" height="44"/>
+        <g transform="translate(60 94) scale(.30) translate(-60 -42)">
+          <g transform="rotate(-22 60 42)" stroke-width="12">
+            <ellipse cx="60" cy="42" rx="53" ry="31"/>
+            <path d="M20 46 C 36 27, 48 54, 60 42 C 72 30, 84 55, 100 39"/>
+          </g>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- V60 dripper -->
+    <symbol id="i-dripper" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 9h30l-12 19h-6z"/>
+        <path d="M16 9l8 19M32 9l-8 19"/>
+        <path d="M21 28v4M27 28v4"/>
+        <path d="M14 32h20l-3 10H17z"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.4v2.3M12 19.3v2.3M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.4 12h2.3M19.3 12h2.3M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+    </symbol>
+    <!-- signature spark -->
+    <symbol id="i-spark" viewBox="0 0 48 48">
+      <path d="M24 3 L29 19 L45 24 L29 29 L24 45 L19 29 L3 24 L19 19 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" aria-label="NOVA COFFEE">
+      <svg class="nav-mark logo-mark" viewBox="130 300 820 360" role="img" aria-label="NOVA COFFEE">
+        <g class="b">
+          <path d="M141.53,453.52h88.72c14.6,44.36,47.45,143.47,55.03,172.39h8.7l-31.45-101.92v-70.47h74.96v192.88h-84.79c-10.11-31.73-48.29-141.22-57.28-172.39h-8.7l29.48,95.46v76.93h-74.68v-192.88Z"/>
+          <path d="M463.56,649.77c-74.4,0-106.13-46.89-106.13-99.39s33.41-100.23,109.5-100.23c70.75,0,105.57,46.89,105.57,100.51s-34.25,99.11-108.94,99.11ZM464.96,610.18c16,0,24.99-10.39,24.99-60.08s-8.14-60.08-24.99-60.08-25.27,12.91-25.27,60.08,8.98,60.08,25.27,60.08Z"/>
+          <path d="M755.83,453.52l-46.33,192.88h-92.93l-46.04-192.88h80.02l8.42,81.14v91.25h8.42v-91.25l8.42-81.14h80.02Z"/>
+          <path d="M859.71,602.6h-39.87l-7.58,43.8h-73.56l53.35-192.88h95.46l53.35,192.88h-73.56l-7.58-43.8ZM854.93,573.96l-10.95-64.01v-35.94h-8.42v35.94l-10.95,64.01h30.32Z"/>
+        </g>
+        <g class="a steam">
+          <path d="M673.18,361.33c-1.45,1.81-2.93,3.45-4.76,5.08-1.85,1.71-3.85,3.45-5.95,5.27-4.12,3.69-8.7,7.88-12.15,13.68-3.49,5.75-5.02,13.11-4.06,19.56.83,6.54,3.56,12.31,7.1,17.09,3.63,4.74,8,8.71,13.06,11.34-6.02-9.49-9.95-19.79-9.4-28.97.29-4.57,1.69-8.44,4.22-11.92,2.52-3.52,6.17-6.82,10.26-10.39,7.87-6.72,18.96-17.54,17.56-32.66-.44-3.67-1.96-7.31-4.27-10-2.29-2.72-5.04-4.56-7.67-5.88-5.35-2.63-10.35-3.92-15.2-6.9,2.67,5.18,7.77,8.74,11.34,12.43,3.8,3.67,5.5,7.31,5.08,10.97-.29,3.67-2.33,7.72-5.16,11.3Z"/>
+          <path d="M636.46,425.69c-4.51-6.13-7.79-12.83-8.61-19.64-.82-6.8,1.27-13.29,5.66-18.25,4.55-5.14,10.75-10.13,15.12-16.85,2.18-3.32,4.1-7.31,4-11.72-.2-4.49-3-8.07-6.16-10.05,2.19,3.16,3.51,6.66,2.83,9.86-.61,3.2-2.66,6.02-4.91,8.67-4.69,5.34-10.5,9.6-16.04,15.56-2.68,3.21-4.84,7.05-5.88,11.23-.96,4.18-.99,8.58.12,12.58,2.09,8.06,7.42,14.6,13.86,18.61Z"/>
+          <path d="M679.81,392.76c-2.04,3.13-3.4,6.81-3.73,10.57-.29,3.75.18,7.49,1.46,10.84,2.46,6.73,7.2,12.16,12.91,15.53-3.76-5.46-6.61-11.18-7.77-17.02-1.18-5.84-.21-11.5,2.84-16.11,3.06-4.62,8.24-8.68,12.69-13.79,2.24-2.54,4.31-5.51,5.51-8.91,1.16-3.41,1.18-7.15-.04-10.27-.42,6.88-4.44,11.41-9.2,15.34-4.7,4.04-10.4,7.55-14.67,13.81Z"/>
+        </g>
+      </svg>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#story" data-en="Story" data-ar="القصة">Story</a>
+      <a href="#origins" data-en="Origins" data-ar="المصادر">Origins</a>
+      <a href="#menu" data-en="Menu" data-ar="المنيو">Menu</a>
+      <a href="#brewing" data-en="Brewing" data-ar="التحضير">Brewing</a>
+      <a href="#visit" data-en="Visit" data-ar="زورونا">Visit</a>
+    </nav>
+    <button class="theme" id="themeBtn" type="button" title="Theme">
+      <svg class="ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+    <button class="lang" id="langBtn" type="button">عربي</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <svg class="rays" viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
+    <g stroke="var(--brand-tan)" stroke-width="1" fill="none" opacity=".55">
+      <path d="M500 500 L500 0"/><path d="M500 500 L420 0"/><path d="M500 500 L580 0"/>
+      <path d="M500 500 L330 0"/><path d="M500 500 L670 0"/><path d="M500 500 L230 0"/>
+      <path d="M500 500 L770 0"/><path d="M500 500 L110 0"/><path d="M500 500 L890 0"/>
+      <path d="M500 500 L0 60"/><path d="M500 500 L1000 60"/>
+      <path d="M500 500 L0 200"/><path d="M500 500 L1000 200"/>
+    </g>
+    <g fill="none" stroke="var(--brand-tan)" stroke-width="1" opacity=".4">
+      <circle cx="500" cy="500" r="180"/><circle cx="500" cy="500" r="300"/><circle cx="500" cy="500" r="430"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-in">
+    <span class="lab" data-en="Specialty roastery · Damascus · est. 2019" data-ar="محمصة قهوة مختصة · دمشق · تأسست 2019">Specialty roastery · Damascus · est. 2019</span>
+
+    <svg class="hero-lock logo-full" viewBox="130 300 820 465" role="img" aria-label="NOVA COFFEE">
+      <g class="b">
+        <path d="M141.53,453.52h88.72c14.6,44.36,47.45,143.47,55.03,172.39h8.7l-31.45-101.92v-70.47h74.96v192.88h-84.79c-10.11-31.73-48.29-141.22-57.28-172.39h-8.7l29.48,95.46v76.93h-74.68v-192.88Z"/>
+        <path d="M463.56,649.77c-74.4,0-106.13-46.89-106.13-99.39s33.41-100.23,109.5-100.23c70.75,0,105.57,46.89,105.57,100.51s-34.25,99.11-108.94,99.11ZM464.96,610.18c16,0,24.99-10.39,24.99-60.08s-8.14-60.08-24.99-60.08-25.27,12.91-25.27,60.08,8.98,60.08,25.27,60.08Z"/>
+        <path d="M755.83,453.52l-46.33,192.88h-92.93l-46.04-192.88h80.02l8.42,81.14v91.25h8.42v-91.25l8.42-81.14h80.02Z"/>
+        <path d="M859.71,602.6h-39.87l-7.58,43.8h-73.56l53.35-192.88h95.46l53.35,192.88h-73.56l-7.58-43.8ZM854.93,573.96l-10.95-64.01v-35.94h-8.42v35.94l-10.95,64.01h30.32Z"/>
+      </g>
+      <g class="a">
+        <path d="M188.2,740.25c0,.75-.74,1.95-2.21,3.6-5.69,6.35-12.42,9.52-20.17,9.52-3.12,0-6.3-.6-9.52-1.8-4.26-1.58-8.27-4.75-12.04-9.52-4.08-5.04-6.12-10.48-6.12-16.31v-8.8c0-4.53,1.18-8.97,3.55-13.33s5.46-7.68,9.26-9.98c3.94-2.37,8.23-3.55,12.87-3.55,7.14,0,13.28,2.44,18.42,7.31v-3.04c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v11.99c0,1.95-.72,2.93-2.16,2.93-1.34,0-2.06-.87-2.16-2.62-.17-2.88-1.73-5.44-4.68-7.67-4.01-3.05-8.54-4.58-13.59-4.58-3.29,0-6.43.74-9.42,2.21-2.23,1.1-3.98,2.4-5.25,3.91-4.56,5.39-6.84,11.06-6.84,17.03v7.56c0,6.38,2.28,11.94,6.84,16.67,4.6,4.84,10.07,7.25,16.42,7.25,6.9,0,13.05-3.24,18.47-9.73.62-.72,1.27-1.08,1.95-1.08,1.37,0,2.06.67,2.06,2.01Z"/>
+        <path d="M340.19,721.72c0,5.52-1.06,10.67-3.19,15.44-2.33,5.18-5.64,9.21-9.93,12.09-4.12,2.74-8.53,4.12-13.23,4.12-7.93,0-14.41-3.38-19.45-10.14-4.6-6.14-6.89-13.31-6.89-21.51s2.28-15.37,6.84-21.51c5.04-6.76,11.54-10.14,19.5-10.14,4.97,0,9.52,1.48,13.64,4.43,3.88,2.78,6.95,6.5,9.21,11.17,2.33,4.91,3.5,10.26,3.5,16.06ZM335.82,721.72c0-6.93-1.89-13.07-5.66-18.42-4.22-5.94-9.66-8.9-16.31-8.9s-12.09,2.99-16.31,8.95c-3.81,5.35-5.71,11.48-5.71,18.37s1.9,12.99,5.71,18.37c4.25,5.97,9.69,8.95,16.31,8.95s12.09-2.97,16.31-8.9c3.77-5.35,5.66-11.49,5.66-18.42Z"/>
+        <path d="M489.77,706.33c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-10.55h-33.09v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h14.82c1.92,0,2.88.72,2.88,2.16s-.96,2.16-2.88,2.16h-24.96c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h47.6v14.87Z"/>
+        <path d="M640.46,706.33c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-10.55h-33.09v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h14.82c1.92,0,2.88.72,2.88,2.16s-.96,2.16-2.88,2.16h-24.96c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h47.6v14.87Z"/>
+        <path d="M791.19,751.67h-47.7c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h45.44v14.87c0,1.92-.72,2.88-2.16,2.88s-2.16-.96-2.16-2.88v-10.55h-30.98v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h33.24v-12.76c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v17.09Z"/>
+        <path d="M941.87,751.67h-47.7c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h45.44v14.87c0,1.92-.72,2.88-2.16,2.88s-2.16-.96-2.16-2.88v-10.55h-30.98v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h33.24v-12.76c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v17.09Z"/>
+      </g>
+      <g class="a steam">
+        <path d="M673.18,361.33c-1.45,1.81-2.93,3.45-4.76,5.08-1.85,1.71-3.85,3.45-5.95,5.27-4.12,3.69-8.7,7.88-12.15,13.68-3.49,5.75-5.02,13.11-4.06,19.56.83,6.54,3.56,12.31,7.1,17.09,3.63,4.74,8,8.71,13.06,11.34-6.02-9.49-9.95-19.79-9.4-28.97.29-4.57,1.69-8.44,4.22-11.92,2.52-3.52,6.17-6.82,10.26-10.39,7.87-6.72,18.96-17.54,17.56-32.66-.44-3.67-1.96-7.31-4.27-10-2.29-2.72-5.04-4.56-7.67-5.88-5.35-2.63-10.35-3.92-15.2-6.9,2.67,5.18,7.77,8.74,11.34,12.43,3.8,3.67,5.5,7.31,5.08,10.97-.29,3.67-2.33,7.72-5.16,11.3Z"/>
+        <path d="M636.46,425.69c-4.51-6.13-7.79-12.83-8.61-19.64-.82-6.8,1.27-13.29,5.66-18.25,4.55-5.14,10.75-10.13,15.12-16.85,2.18-3.32,4.1-7.31,4-11.72-.2-4.49-3-8.07-6.16-10.05,2.19,3.16,3.51,6.66,2.83,9.86-.61,3.2-2.66,6.02-4.91,8.67-4.69,5.34-10.5,9.6-16.04,15.56-2.68,3.21-4.84,7.05-5.88,11.23-.96,4.18-.99,8.58.12,12.58,2.09,8.06,7.42,14.6,13.86,18.61Z"/>
+        <path d="M679.81,392.76c-2.04,3.13-3.4,6.81-3.73,10.57-.29,3.75.18,7.49,1.46,10.84,2.46,6.73,7.2,12.16,12.91,15.53-3.76-5.46-6.61-11.18-7.77-17.02-1.18-5.84-.21-11.5,2.84-16.11,3.06-4.62,8.24-8.68,12.69-13.79,2.24-2.54,4.31-5.51,5.51-8.91,1.16-3.41,1.18-7.15-.04-10.27-.42,6.88-4.44,11.41-9.2,15.34-4.7,4.04-10.4,7.55-14.67,13.81Z"/>
+      </g>
+    </svg>
+
+    <h1 class="display" data-en="The moment a star burns brightest" data-ar="اللحظة التي يتوهّج فيها النجم">The moment a star burns brightest</h1>
+
+    <p class="hero-lede" data-en="We roast single-origin coffee to the exact point where sweetness peaks and acidity turns to fruit — then we stop. That window is about forty seconds long. Everything we do is built around finding it." data-ar="نحمّص القهوة أحادية المصدر حتى النقطة التي تبلغ فيها الحلاوة ذروتها وتتحوّل الحموضة إلى فاكهة — ثم نتوقّف. هذه النافذة لا تتجاوز أربعين ثانية، وكل ما نفعله مبنيّ على العثور عليها.">We roast single-origin coffee to the exact point where sweetness peaks and acidity turns to fruit — then we stop. That window is about forty seconds long. Everything we do is built around finding it.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#menu" data-en="Explore the menu" data-ar="تصفّح المنيو">Explore the menu</a>
+      <a class="btn btn-ghost" href="#visit" data-en="Book a tasting" data-ar="احجز جلسة تذوّق">Book a tasting</a>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span class="n">12</span><span class="t" data-en="Origins sourced each year" data-ar="مصدرًا نستوردها سنويًا">Origins sourced each year</span></div>
+      <div class="fact"><span class="n">84+</span><span class="t" data-en="Minimum cupping score (SCA)" data-ar="الحد الأدنى لتقييم التذوّق (SCA)">Minimum cupping score (SCA)</span></div>
+      <div class="fact"><span class="n">48h</span><span class="t" data-en="From roast to your cup" data-ar="من التحميص إلى فنجانك">From roast to your cup</span></div>
+      <div class="fact"><span class="n">1:16</span><span class="t" data-en="Our house filter ratio" data-ar="نسبة الفلتر المعتمدة عندنا">Our house filter ratio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section" id="process" style="background:var(--bg-2)">
+  <div class="wrap">
+    <span class="lab" data-en="Cherry to cup · four hands, four steps" data-ar="من الحبّة إلى الفنجان · أربع مراحل">Cherry to cup · four hands, four steps</span>
+    <h2 class="display" style="font-size:var(--t-h2);text-transform:uppercase;margin-block:var(--s2) var(--s4)" data-en="Nothing here is automatic" data-ar="لا شيء هنا يحدث تلقائيًا">Nothing here is automatic</h2>
+
+    <div class="process">
+      <article class="step">
+        <div class="step-art"><svg viewBox="0 0 200 260" role="img" aria-label="Coffee cherry branch"><use href="#i-branch"/></svg></div>
+        <span class="step-n">01</span>
+        <h3 class="display" data-en="Cherry" data-ar="الحبّة">Cherry</h3>
+        <p data-en="Picked ripe and by hand, in three passes across the same tree. Green fruit tastes like green fruit, and no roast profile can hide it." data-ar="تُقطف ناضجة وباليد، على ثلاث مرات من الشجرة نفسها. الثمرة غير الناضجة يبقى طعمها كذلك، ولا يوجد منحنى تحميص يخفي هذا.">Picked ripe and by hand, in three passes across the same tree. Green fruit tastes like green fruit, and no roast profile can hide it.</p>
+        <span class="step-n step-spec" data-en="Harvested at 20° Brix" data-ar="تُقطف عند 20° بريكس">Harvested at 20° Brix</span>
+      </article>
+
+      <article class="step">
+        <div class="step-art"><svg viewBox="0 0 150 130" role="img" aria-label="Roasting drum"><use href="#i-roaster"/></svg></div>
+        <span class="step-n">02</span>
+        <h3 class="display" data-en="Roast" data-ar="التحميص">Roast</h3>
+        <p data-en="Twelve kilos at a time on a drum roaster, logged every fifteen seconds. Small batches because the last forty seconds decide everything." data-ar="اثنا عشر كيلوغرامًا في الدفعة على محمصة أسطوانية، مع تسجيل القراءات كل خمس عشرة ثانية. دفعات صغيرة لأن الأربعين ثانية الأخيرة تحسم كل شيء.">Twelve kilos at a time on a drum roaster, logged every fifteen seconds. Small batches because the last forty seconds decide everything.</p>
+        <span class="step-n step-spec" data-en="12 kg · drop at 11:50" data-ar="12 كغ · الإنزال عند 11:50">12 kg · drop at 11:50</span>
+      </article>
+
+      <article class="step">
+        <div class="step-art"><svg viewBox="0 0 120 150" role="img" aria-label="Burr grinder"><use href="#i-grinder"/></svg></div>
+        <span class="step-n">03</span>
+        <h3 class="display" data-en="Grind" data-ar="الطحن">Grind</h3>
+        <p data-en="Ground to order, never before. Coffee loses most of its aroma within fifteen minutes of grinding, and we are not willing to spend it on a shelf." data-ar="نطحن عند الطلب، ولا نطحن قبله أبدًا. تفقد القهوة معظم رائحتها خلال خمس عشرة دقيقة من الطحن، ولسنا مستعدين لإنفاقها على الرفّ.">Ground to order, never before. Coffee loses most of its aroma within fifteen minutes of grinding, and we are not willing to spend it on a shelf.</p>
+        <span class="step-n step-spec" data-en="400–600 µm for filter" data-ar="400–600 ميكرومتر للفلتر">400–600 µm for filter</span>
+      </article>
+
+      <article class="step">
+        <div class="step-art"><svg viewBox="0 0 150 120" role="img" aria-label="Gooseneck kettle"><use href="#i-kettle"/></svg></div>
+        <span class="step-n">04</span>
+        <h3 class="display" data-en="Brew" data-ar="التحضير">Brew</h3>
+        <p data-en="Ninety-three degrees, poured in a slow spiral from the centre out. Every recipe we use behind the bar is written out further down this page." data-ar="ثلاث وتسعون درجة، تُسكب بلولب بطيء من المركز إلى الخارج. كل وصفة نستخدمها خلف البار مكتوبة بالتفصيل أسفل هذه الصفحة.">Ninety-three degrees, poured in a slow spiral from the centre out. Every recipe we use behind the bar is written out further down this page.</p>
+        <span class="step-n step-spec" data-en="93 °C · 1:16 · 2:45" data-ar="93 °م · 1:16 · 2:45">93 °C · 1:16 · 2:45</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section class="section panel" id="story">
+  <div class="wrap story-grid">
+    <div class="story">
+      <span class="lab" data-en="Why Nova" data-ar="لماذا نوفا">Why Nova</span>
+      <h2 class="display" data-en="A star that flares, then settles" data-ar="نجمٌ يشتعل، ثم يهدأ">A star that flares, then settles</h2>
+      <p data-en="A nova is a star that suddenly brightens — more light in a single night than it gave in a century. It is not an explosion that destroys anything. It is a threshold being crossed." data-ar="النوفا نجمٌ يزداد سطوعه فجأة — ضوءٌ في ليلة واحدة أكثر مما أعطاه في قرن كامل. ليست انفجارًا يدمّر شيئًا، بل عتبة تُعبر.">A nova is a star that suddenly brightens — more light in a single night than it gave in a century. It is not an explosion that destroys anything. It is a threshold being crossed.</p>
+      <p data-en="Coffee has the same threshold. It sits between first crack and second, and the roaster who reaches it holds the bean there for less than a minute before dropping it. Push past it and you taste ash. Stop short and you taste grass." data-ar="وللقهوة العتبة نفسها. تقع بين الطقطقة الأولى والثانية، والمحمّص الذي يبلغها يُبقي الحبّة عندها أقل من دقيقة قبل أن يُنزلها. تجاوزها فتذوق الرماد، وتوقّف قبلها فتذوق العشب.">Coffee has the same threshold. It sits between first crack and second, and the roaster who reaches it holds the bean there for less than a minute before dropping it. Push past it and you taste ash. Stop short and you taste grass.</p>
+      <p class="pull" data-en="The three curls of steam in our mark are not decoration. They are the last forty seconds of the roast." data-ar="خصلات البخار الثلاث في شعارنا ليست زخرفة. إنها الأربعون ثانية الأخيرة من التحميص.">The three curls of steam in our mark are not decoration. They are the last forty seconds of the roast.</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <span class="chart-title" data-en="Roast profile — Ethiopia Guji, 12 kg batch" data-ar="منحنى التحميص — إثيوبيا غوجي، دفعة 12 كغ">Roast profile — Ethiopia Guji, 12 kg batch</span>
+      </div>
+      <div class="chart-scroll">
+        <svg viewBox="0 0 900 400" role="img" aria-label="Roast curve: bean temperature rises from 190 degrees at charge, dips to 158 at the turning point at 1:35, then climbs through first crack at 196 degrees at 9:10 and drops at 208 degrees at 11:50. The final 40 seconds are marked as the Nova window.">
+          <!-- grid -->
+          <g stroke="var(--panel-line)" stroke-width="1" fill="none">
+            <line x1="90" y1="294" x2="840" y2="294"/>
+            <line x1="90" y1="202" x2="840" y2="202"/>
+            <line x1="90" y1="109" x2="840" y2="109"/>
+          </g>
+          <!-- axes -->
+          <g stroke="var(--brand-tan)" stroke-width="1.25" fill="none" opacity=".7">
+            <line x1="90" y1="40" x2="90" y2="340"/>
+            <line x1="90" y1="340" x2="840" y2="340"/>
+          </g>
+          <!-- y labels -->
+          <g fill="var(--panel-ink-2)" font-family="DM Mono, monospace" font-size="14" text-anchor="end">
+            <text x="78" y="298" data-en="160°C" data-ar="160°م">160°C</text>
+            <text x="78" y="206" data-en="180°C" data-ar="180°م">180°C</text>
+            <text x="78" y="113" data-en="200°C" data-ar="200°م">200°C</text>
+          </g>
+          <!-- x labels -->
+          <g fill="var(--panel-ink-2)" font-family="DM Mono, monospace" font-size="14" text-anchor="middle">
+            <text x="90" y="362">0:00</text>
+            <text x="277" y="362">3:00</text>
+            <text x="465" y="362">6:00</text>
+            <text x="652" y="362">9:00</text>
+            <text x="840" y="362">12:00</text>
+          </g>
+          <!-- nova window band -->
+          <rect x="788" y="40" width="42" height="300" fill="var(--brand-tan)" opacity=".18"/>
+          <text x="830" y="30" fill="var(--brand-tan)" font-family="DM Mono, monospace" font-size="12.5" text-anchor="end" letter-spacing="1.2" data-en="NOVA WINDOW · 40s" data-ar="نافذة نوفا · 40 ثانية">NOVA WINDOW · 40s</text>
+          <!-- curve -->
+          <path d="M90,155 C130,215 160,275 189,303 C230,290 300,258 340,239 C380,220 430,200 465,188 C505,173 555,158 590,151 C615,144 645,133 663,128 C690,118 720,108 746,100 C775,90 805,80 830,72"
+                fill="none" stroke="var(--brand-tan)" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- markers -->
+          <g fill="var(--panel-ink)">
+            <circle cx="189" cy="303" r="4.5"/>
+            <circle cx="663" cy="128" r="4.5"/>
+            <circle cx="830" cy="72" r="4.5"/>
+          </g>
+          <g fill="var(--panel-ink)" font-family="DM Mono, monospace" font-size="13">
+            <text x="200" y="292" data-en="Turning point · 1:35 · 158°C" data-ar="نقطة الانعطاف · 1:35 · 158°م">Turning point · 1:35 · 158°C</text>
+            <text x="663" y="115" text-anchor="middle" data-en="First crack · 9:10 · 196°C" data-ar="الطقطقة الأولى · 9:10 · 196°م">First crack · 9:10 · 196°C</text>
+            <text x="822" y="60" text-anchor="end" data-en="Drop · 11:50 · 208°C" data-ar="الإنزال · 11:50 · 208°م">Drop · 11:50 · 208°C</text>
+          </g>
+        </svg>
+      </div>
+      <p class="chart-hint" data-en="Scroll the chart sideways to see the full roast" data-ar="اسحب المنحنى جانبيًا لرؤية التحميص كاملًا">Scroll the chart sideways to see the full roast</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORIGINS ================= -->
+<section class="section" id="origins">
+  <div class="wrap">
+    <span class="lab" data-en="Current lot list · roasted weekly" data-ar="قائمة الدفعات الحالية · تحميص أسبوعي">Current lot list · roasted weekly</span>
+    <h2 class="display" style="font-size:var(--t-h2);text-transform:uppercase;margin-block:var(--s2) var(--s4)" data-en="Three origins on the bar" data-ar="ثلاثة مصادر على البار">Three origins on the bar</h2>
+
+    <article class="origin">
+      <div class="origin-top">
+        <h3 class="origin-name display" data-en="Ethiopia" data-ar="إثيوبيا">Ethiopia</h3>
+        <span class="origin-region" data-en="Guji · Hambela Wamena" data-ar="غوجي · هامبيلا وامينا">Guji · Hambela Wamena</span>
+        <span class="score">87.5 <span data-en="pts" data-ar="نقطة">pts</span></span>
+      </div>
+      <p class="origin-notes" data-en="Blueberry skin, jasmine, dark chocolate on the finish. Dense and syrupy when brewed at 1:15." data-ar="قشر التوت الأزرق، الياسمين، وشوكولا داكنة في النهاية. قوامها كثيف وشرابي عند التحضير بنسبة 1:15.">Blueberry skin, jasmine, dark chocolate on the finish. Dense and syrupy when brewed at 1:15.</p>
+      <dl class="specs">
+        <div class="spec"><dt data-en="Altitude" data-ar="الارتفاع">Altitude</dt><dd>1,950–2,200 masl</dd></div>
+        <div class="spec"><dt data-en="Varietal" data-ar="الصنف">Varietal</dt><dd data-en="Heirloom" data-ar="أصناف محلية موروثة">Heirloom</dd></div>
+        <div class="spec"><dt data-en="Process" data-ar="المعالجة">Process</dt><dd data-en="Natural" data-ar="طبيعية">Natural</dd></div>
+        <div class="spec"><dt data-en="Harvest" data-ar="الحصاد">Harvest</dt><dd data-en="Nov – Jan" data-ar="تشرين الثاني – كانون الثاني">Nov – Jan</dd></div>
+        <div class="spec"><dt data-en="Roast" data-ar="درجة التحميص">Roast</dt><dd><span class="roast-lab" data-en="Light" data-ar="فاتحة">Light</span><span class="roast-scale" role="img" aria-label="Roast level: Light"><svg viewBox="0 0 120 84" style="color:#C08B57" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" class="off" style="color:#9A6338" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" class="off" style="color:#6E4227" aria-hidden="true"><use href="#i-bean-solid"/></svg></span></dd></div>
+      </dl>
+    </article>
+
+    <article class="origin">
+      <div class="origin-top">
+        <h3 class="origin-name display" data-en="Yemen" data-ar="اليمن">Yemen</h3>
+        <span class="origin-region" data-en="Haraz · Bani Ismail" data-ar="حراز · بني إسماعيل">Haraz · Bani Ismail</span>
+        <span class="score">88.0 <span data-en="pts" data-ar="نقطة">pts</span></span>
+      </div>
+      <p class="origin-notes" data-en="Dried fig, cardamom, cocoa nib. Sun-dried on rooftop terraces the way it has been done here for six centuries." data-ar="تين مجفّف، هيل، وحبيبات كاكاو. تُجفَّف تحت الشمس على أسطح المدرّجات كما يُفعل هنا منذ ستة قرون.">Dried fig, cardamom, cocoa nib. Sun-dried on rooftop terraces the way it has been done here for six centuries.</p>
+      <dl class="specs">
+        <div class="spec"><dt data-en="Altitude" data-ar="الارتفاع">Altitude</dt><dd>1,800–2,400 masl</dd></div>
+        <div class="spec"><dt data-en="Varietal" data-ar="الصنف">Varietal</dt><dd data-en="Udaini · Tuffahi" data-ar="عديني · تفاحي">Udaini · Tuffahi</dd></div>
+        <div class="spec"><dt data-en="Process" data-ar="المعالجة">Process</dt><dd data-en="Natural, sun-dried" data-ar="طبيعية، تجفيف شمسي">Natural, sun-dried</dd></div>
+        <div class="spec"><dt data-en="Harvest" data-ar="الحصاد">Harvest</dt><dd data-en="Oct – Dec" data-ar="تشرين الأول – كانون الأول">Oct – Dec</dd></div>
+        <div class="spec"><dt data-en="Roast" data-ar="درجة التحميص">Roast</dt><dd><span class="roast-lab" data-en="Medium" data-ar="وسط">Medium</span><span class="roast-scale" role="img" aria-label="Roast level: Medium"><svg viewBox="0 0 120 84" class="off" style="color:#C08B57" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" class="off" style="color:#9A6338" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" style="color:#6E4227" aria-hidden="true"><use href="#i-bean-solid"/></svg></span></dd></div>
+      </dl>
+    </article>
+
+    <article class="origin">
+      <div class="origin-top">
+        <h3 class="origin-name display" data-en="Colombia" data-ar="كولومبيا">Colombia</h3>
+        <span class="origin-region" data-en="Huila · Pitalito" data-ar="هويلا · بيتاليتو">Huila · Pitalito</span>
+        <span class="score">86.0 <span data-en="pts" data-ar="نقطة">pts</span></span>
+      </div>
+      <p class="origin-notes" data-en="Red apple, caramel, orange peel. The one we hand to anyone who says they do not like filter coffee." data-ar="تفاح أحمر، كراميل، وقشر برتقال. هذه التي نقدّمها لكل من يقول إنه لا يحب قهوة الفلتر.">Red apple, caramel, orange peel. The one we hand to anyone who says they do not like filter coffee.</p>
+      <dl class="specs">
+        <div class="spec"><dt data-en="Altitude" data-ar="الارتفاع">Altitude</dt><dd>1,650–1,800 masl</dd></div>
+        <div class="spec"><dt data-en="Varietal" data-ar="الصنف">Varietal</dt><dd data-en="Caturra · Castillo" data-ar="كاتورا · كاستيّو">Caturra · Castillo</dd></div>
+        <div class="spec"><dt data-en="Process" data-ar="المعالجة">Process</dt><dd data-en="Washed" data-ar="مغسولة">Washed</dd></div>
+        <div class="spec"><dt data-en="Harvest" data-ar="الحصاد">Harvest</dt><dd data-en="Apr – Jun" data-ar="نيسان – حزيران">Apr – Jun</dd></div>
+        <div class="spec"><dt data-en="Roast" data-ar="درجة التحميص">Roast</dt><dd><span class="roast-lab" data-en="Medium-light" data-ar="فاتحة إلى وسط">Medium-light</span><span class="roast-scale" role="img" aria-label="Roast level: Medium-light"><svg viewBox="0 0 120 84" class="off" style="color:#C08B57" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" style="color:#9A6338" aria-hidden="true"><use href="#i-bean-solid"/></svg><svg viewBox="0 0 120 84" class="off" style="color:#6E4227" aria-hidden="true"><use href="#i-bean-solid"/></svg></span></dd></div>
+      </dl>
+    </article>
+
+    <div class="bean-rule" aria-hidden="true">
+      <span class="ln"></span>
+      <svg viewBox="0 0 120 84"><use href="#i-bean"/></svg>
+      <svg viewBox="0 0 120 84"><use href="#i-bean"/></svg>
+      <svg viewBox="0 0 120 84"><use href="#i-bean"/></svg>
+      <span class="ln"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="section" id="menu" style="background:var(--bg-2);position:relative;overflow:hidden">
+  <svg class="beans-layer" style="opacity:.13" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g class="drift">
+      <use href="#i-bean" x="-70"  y="30"  width="150" height="105"/>
+      <use href="#i-bean" x="1130" y="600" width="170" height="119"/>
+    </g>
+    <g class="drift">
+      <use href="#i-bean" x="1150" y="60"  width="120" height="84"/>
+      <use href="#i-bean" x="-60"  y="690" width="130" height="91"/>
+    </g>
+  </svg>
+  <div class="wrap" style="position:relative">
+    <span class="lab" data-en="The bar · prices in USD" data-ar="البار · الأسعار بالدولار">The bar · prices in USD</span>
+    <h2 class="display" style="font-size:var(--t-h2);text-transform:uppercase;margin-block:var(--s2) var(--s4)" data-en="Menu" data-ar="المنيو">Menu</h2>
+
+    <div class="menu-grid">
+      <div class="menu-group">
+        <h3 class="display"><svg class="h-ico" viewBox="0 0 120 120" aria-hidden="true"><use href="#i-cup"/></svg><span data-en="Espresso bar" data-ar="بار الإسبريسو">Espresso bar</span></h3>
+        <div class="item"><span class="nm" data-en="Espresso" data-ar="إسبريسو">Espresso</span><span class="pr">2.50</span></div>
+        <div class="item"><span class="nm" data-en="Cortado" data-ar="كورتادو">Cortado</span><span class="pr">3.00</span></div>
+        <div class="item"><span class="nm" data-en="Flat white" data-ar="فلات وايت">Flat white</span><span class="pr">3.50</span></div>
+        <div class="item"><span class="nm" data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</span><span class="pr">3.50</span></div>
+        <div class="item"><span class="nm" data-en="Latte" data-ar="لاتيه">Latte</span><span class="pr">4.00</span></div>
+
+        <h3 class="display" style="margin-block-start:var(--s4)"><svg class="h-ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-spark"/></svg><span data-en="Signature" data-ar="توقيع نوفا">Signature</span></h3>
+        <div class="item">
+          <span class="nm" data-en="Nova tonic" data-ar="نوفا تونيك">Nova tonic
+            <span class="dsc" data-en="Cold brew, tonic, burnt orange" data-ar="كولد برو، تونيك، وبرتقال محروق">Cold brew, tonic, burnt orange</span>
+          </span><span class="pr">5.50</span>
+        </div>
+        <div class="item">
+          <span class="nm" data-en="Cardamom cortado" data-ar="كورتادو الهيل">Cardamom cortado
+            <span class="dsc" data-en="Green cardamom ground with the shot" data-ar="هيل أخضر يُطحن مع الجرعة">Green cardamom ground with the shot</span>
+          </span><span class="pr">4.00</span>
+        </div>
+        <div class="item">
+          <span class="nm" data-en="Honey oat latte" data-ar="لاتيه الشوفان بالعسل">Honey oat latte
+            <span class="dsc" data-en="Wildflower honey, oat milk" data-ar="عسل زهور برّية، وحليب شوفان">Wildflower honey, oat milk</span>
+          </span><span class="pr">5.00</span>
+        </div>
+      </div>
+
+      <div class="menu-group">
+        <h3 class="display"><svg class="h-ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-dripper"/></svg><span data-en="Filter" data-ar="الفلتر">Filter</span></h3>
+        <div class="item"><span class="nm" data-en="V60 — single cup" data-ar="V60 — فنجان واحد">V60 — single cup</span><span class="pr">4.00</span></div>
+        <div class="item"><span class="nm" data-en="Chemex — for two" data-ar="كيمكس — لشخصين">Chemex — for two</span><span class="pr">7.00</span></div>
+        <div class="item"><span class="nm" data-en="Cold brew" data-ar="كولد برو">Cold brew</span><span class="pr">4.00</span></div>
+        <div class="item"><span class="nm" data-en="Iced filter" data-ar="فلتر مثلّج">Iced filter</span><span class="pr">4.00</span></div>
+
+        <h3 class="display" style="margin-block-start:var(--s4)"><svg class="h-ico" viewBox="0 0 120 150" aria-hidden="true"><use href="#i-bag"/></svg><span data-en="Take home · 250 g" data-ar="للمنزل · 250 غ">Take home · 250 g</span></h3>
+        <div class="item"><span class="nm">Ethiopia Guji</span><span class="pr">18.00</span></div>
+        <div class="item"><span class="nm">Yemen Haraz</span><span class="pr">26.00</span></div>
+        <div class="item"><span class="nm">Colombia Huila</span><span class="pr">14.00</span></div>
+        <div class="item">
+          <span class="nm" data-en="Subscription — 2 bags monthly" data-ar="اشتراك — كيسان شهريًا">Subscription — 2 bags monthly
+            <span class="dsc" data-en="Rotating origins, 15% off, free delivery" data-ar="مصادر متبدّلة، خصم 15%، وتوصيل مجاني">Rotating origins, 15% off, free delivery</span>
+          </span><span class="pr">28.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BREWING ================= -->
+<section class="section panel" id="brewing">
+  <div class="wrap">
+    <span class="lab" data-en="House recipes" data-ar="وصفات المحمصة">House recipes</span>
+    <h2 class="display" style="font-size:var(--t-h2);text-transform:uppercase;margin-block:var(--s2) var(--s4)" data-en="Brew it the way we do" data-ar="حضّرها كما نحضّرها">Brew it the way we do</h2>
+
+    <div class="brew-grid">
+      <div class="brew">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--brand-tan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 8h28l-11 18h-6z"/>
+          <path d="M16 8l8 18M32 8l-8 18"/>
+          <path d="M21 26v5M27 26v5"/>
+          <path d="M15 31h18l-3 9H18z"/>
+        </svg>
+        <h3 class="display">V60</h3>
+        <dl>
+          <dt data-en="Dose" data-ar="الجرعة">Dose</dt><dd>22 g</dd>
+          <dt data-en="Water" data-ar="الماء">Water</dt><dd>350 g</dd>
+          <dt data-en="Ratio" data-ar="النسبة">Ratio</dt><dd>1 : 16</dd>
+          <dt data-en="Temp" data-ar="الحرارة">Temp</dt><dd>93 °C</dd>
+          <dt data-en="Grind" data-ar="الطحن">Grind</dt><dd data-en="Medium-fine" data-ar="وسط–ناعم">Medium-fine</dd>
+          <dt data-en="Bloom" data-ar="الإزهار">Bloom</dt><dd>50 g / 40 s</dd>
+          <dt data-en="Total" data-ar="الزمن الكلي">Total</dt><dd>2:45</dd>
+        </dl>
+      </div>
+
+      <div class="brew">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--brand-tan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="19" cy="17" r="11"/>
+          <circle cx="19" cy="17" r="6.5"/>
+          <path d="M28.5 22.5l12 12a3 3 0 0 1-4.2 4.2l-12-12"/>
+          <path d="M13 33h12M15 38h8"/>
+        </svg>
+        <h3 class="display" data-en="Espresso" data-ar="إسبريسو">Espresso</h3>
+        <dl>
+          <dt data-en="Dose" data-ar="الجرعة">Dose</dt><dd>18 g</dd>
+          <dt data-en="Yield" data-ar="الناتج">Yield</dt><dd>38 g</dd>
+          <dt data-en="Ratio" data-ar="النسبة">Ratio</dt><dd>1 : 2.1</dd>
+          <dt data-en="Temp" data-ar="الحرارة">Temp</dt><dd>93 °C</dd>
+          <dt data-en="Grind" data-ar="الطحن">Grind</dt><dd data-en="Fine" data-ar="ناعم">Fine</dd>
+          <dt data-en="Pressure" data-ar="الضغط">Pressure</dt><dd>9 bar</dd>
+          <dt data-en="Time" data-ar="الزمن">Time</dt><dd>26–28 s</dd>
+        </dl>
+      </div>
+
+      <div class="brew">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--brand-tan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 6h20v5H14z"/>
+          <path d="M16 11v27a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V11"/>
+          <path d="M16 24c3-2 5 2 8 0s5-2 8 0"/>
+          <circle cx="22" cy="32" r="1.6"/><circle cx="28" cy="36" r="1.2"/>
+        </svg>
+        <h3 class="display" data-en="Cold brew" data-ar="كولد برو">Cold brew</h3>
+        <dl>
+          <dt data-en="Dose" data-ar="الجرعة">Dose</dt><dd>100 g</dd>
+          <dt data-en="Water" data-ar="الماء">Water</dt><dd>1 L</dd>
+          <dt data-en="Ratio" data-ar="النسبة">Ratio</dt><dd>1 : 10</dd>
+          <dt data-en="Temp" data-ar="الحرارة">Temp</dt><dd>4 °C</dd>
+          <dt data-en="Grind" data-ar="الطحن">Grind</dt><dd data-en="Coarse" data-ar="خشن">Coarse</dd>
+          <dt data-en="Steep" data-ar="النقع">Steep</dt><dd>16 h</dd>
+          <dt data-en="Keeps" data-ar="الصلاحية">Keeps</dt><dd data-en="7 days" data-ar="7 أيام">7 days</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="section" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="lab" data-en="Roastery &amp; café" data-ar="المحمصة والمقهى">Roastery &amp; café</span>
+      <h2 class="display" style="font-size:var(--t-h2);text-transform:uppercase;margin-block:var(--s2) var(--s3)" data-en="Come sit with us" data-ar="تعال واجلس معنا">Come sit with us</h2>
+      <p style="color:var(--ink-2);max-width:52ch" data-en="The roaster runs Tuesday and Friday mornings. If you visit then, the whole room smells like the lot list above. Roastery tours every Wednesday at 17:00 — six seats, no charge, book by phone." data-ar="نشغّل المحمصة صباح الثلاثاء والجمعة. إن زرتنا حينها ستشمّ الغرفة كلها رائحة الدفعات المذكورة أعلاه. جولة في المحمصة كل أربعاء الساعة 5 مساءً — ستة مقاعد فقط، مجانية، والحجز عبر الهاتف.">The roaster runs Tuesday and Friday mornings. If you visit then, the whole room smells like the lot list above. Roastery tours every Wednesday at 17:00 — six seats, no charge, book by phone.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="#" data-en="Get directions" data-ar="احصل على الاتجاهات">Get directions</a>
+        <a class="btn btn-ghost" href="tel:+963110000000"><span class="ltr">+963 11 000 0000</span></a>
+      </div>
+      <p style="margin-block-start:var(--s3);font-family:var(--f-mono);font-size:var(--t-sm);color:var(--ink-2)" data-en="Al-Malki, Damascus · Abdul Munim Riad St." data-ar="المالكي، دمشق · شارع عبد المنعم رياض">Al-Malki, Damascus · Abdul Munim Riad St.</p>
+    </div>
+
+    <div>
+      <span class="lab" data-en="Opening hours" data-ar="ساعات العمل">Opening hours</span>
+      <table class="hours" style="margin-block-start:var(--s2)">
+        <tbody>
+          <tr><th scope="row" data-en="Saturday – Wednesday" data-ar="السبت – الأربعاء">Saturday – Wednesday</th><td>08:00 – 23:00</td></tr>
+          <tr><th scope="row" data-en="Thursday" data-ar="الخميس">Thursday</th><td>08:00 – 01:00</td></tr>
+          <tr><th scope="row" data-en="Friday" data-ar="الجمعة">Friday</th><td>13:00 – 01:00</td></tr>
+          <tr><th scope="row" data-en="Roastery tour" data-ar="جولة المحمصة">Roastery tour</th><td data-en="Wed · 17:00" data-ar="الأربعاء · 17:00">Wed · 17:00</td></tr>
+          <tr><th scope="row" data-en="Cupping session" data-ar="جلسة تذوّق">Cupping session</th><td data-en="Sat · 11:00" data-ar="السبت · 11:00">Sat · 11:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot panel">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <svg class="foot-lock logo-full" viewBox="130 300 820 465" role="img" aria-label="NOVA COFFEE">
+          <g class="b">
+            <path d="M141.53,453.52h88.72c14.6,44.36,47.45,143.47,55.03,172.39h8.7l-31.45-101.92v-70.47h74.96v192.88h-84.79c-10.11-31.73-48.29-141.22-57.28-172.39h-8.7l29.48,95.46v76.93h-74.68v-192.88Z"/>
+            <path d="M463.56,649.77c-74.4,0-106.13-46.89-106.13-99.39s33.41-100.23,109.5-100.23c70.75,0,105.57,46.89,105.57,100.51s-34.25,99.11-108.94,99.11ZM464.96,610.18c16,0,24.99-10.39,24.99-60.08s-8.14-60.08-24.99-60.08-25.27,12.91-25.27,60.08,8.98,60.08,25.27,60.08Z"/>
+            <path d="M755.83,453.52l-46.33,192.88h-92.93l-46.04-192.88h80.02l8.42,81.14v91.25h8.42v-91.25l8.42-81.14h80.02Z"/>
+            <path d="M859.71,602.6h-39.87l-7.58,43.8h-73.56l53.35-192.88h95.46l53.35,192.88h-73.56l-7.58-43.8ZM854.93,573.96l-10.95-64.01v-35.94h-8.42v35.94l-10.95,64.01h30.32Z"/>
+          </g>
+          <g class="a">
+            <path d="M188.2,740.25c0,.75-.74,1.95-2.21,3.6-5.69,6.35-12.42,9.52-20.17,9.52-3.12,0-6.3-.6-9.52-1.8-4.26-1.58-8.27-4.75-12.04-9.52-4.08-5.04-6.12-10.48-6.12-16.31v-8.8c0-4.53,1.18-8.97,3.55-13.33s5.46-7.68,9.26-9.98c3.94-2.37,8.23-3.55,12.87-3.55,7.14,0,13.28,2.44,18.42,7.31v-3.04c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v11.99c0,1.95-.72,2.93-2.16,2.93-1.34,0-2.06-.87-2.16-2.62-.17-2.88-1.73-5.44-4.68-7.67-4.01-3.05-8.54-4.58-13.59-4.58-3.29,0-6.43.74-9.42,2.21-2.23,1.1-3.98,2.4-5.25,3.91-4.56,5.39-6.84,11.06-6.84,17.03v7.56c0,6.38,2.28,11.94,6.84,16.67,4.6,4.84,10.07,7.25,16.42,7.25,6.9,0,13.05-3.24,18.47-9.73.62-.72,1.27-1.08,1.95-1.08,1.37,0,2.06.67,2.06,2.01Z"/>
+            <path d="M340.19,721.72c0,5.52-1.06,10.67-3.19,15.44-2.33,5.18-5.64,9.21-9.93,12.09-4.12,2.74-8.53,4.12-13.23,4.12-7.93,0-14.41-3.38-19.45-10.14-4.6-6.14-6.89-13.31-6.89-21.51s2.28-15.37,6.84-21.51c5.04-6.76,11.54-10.14,19.5-10.14,4.97,0,9.52,1.48,13.64,4.43,3.88,2.78,6.95,6.5,9.21,11.17,2.33,4.91,3.5,10.26,3.5,16.06ZM335.82,721.72c0-6.93-1.89-13.07-5.66-18.42-4.22-5.94-9.66-8.9-16.31-8.9s-12.09,2.99-16.31,8.95c-3.81,5.35-5.71,11.48-5.71,18.37s1.9,12.99,5.71,18.37c4.25,5.97,9.69,8.95,16.31,8.95s12.09-2.97,16.31-8.9c3.77-5.35,5.66-11.49,5.66-18.42Z"/>
+            <path d="M489.77,706.33c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-10.55h-33.09v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h14.82c1.92,0,2.88.72,2.88,2.16s-.96,2.16-2.88,2.16h-24.96c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h47.6v14.87Z"/>
+            <path d="M640.46,706.33c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-10.55h-33.09v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h14.82c1.92,0,2.88.72,2.88,2.16s-.96,2.16-2.88,2.16h-24.96c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h47.6v14.87Z"/>
+            <path d="M791.19,751.67h-47.7c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h45.44v14.87c0,1.92-.72,2.88-2.16,2.88s-2.16-.96-2.16-2.88v-10.55h-30.98v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h33.24v-12.76c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v17.09Z"/>
+            <path d="M941.87,751.67h-47.7c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h5.81v-51.56h-5.81c-1.92,0-2.88-.72-2.88-2.16s.96-2.16,2.88-2.16h45.44v14.87c0,1.92-.72,2.88-2.16,2.88s-2.16-.96-2.16-2.88v-10.55h-30.98v22.49h15.49v-4.89c0-1.92.74-2.88,2.21-2.88s2.16.96,2.16,2.88v14.1c0,1.92-.72,2.88-2.16,2.88s-2.21-.96-2.21-2.88v-4.89h-15.49v24.75h33.24v-12.76c0-1.92.72-2.88,2.16-2.88s2.16.96,2.16,2.88v17.09Z"/>
+          </g>
+          <g class="a steam">
+            <path d="M673.18,361.33c-1.45,1.81-2.93,3.45-4.76,5.08-1.85,1.71-3.85,3.45-5.95,5.27-4.12,3.69-8.7,7.88-12.15,13.68-3.49,5.75-5.02,13.11-4.06,19.56.83,6.54,3.56,12.31,7.1,17.09,3.63,4.74,8,8.71,13.06,11.34-6.02-9.49-9.95-19.79-9.4-28.97.29-4.57,1.69-8.44,4.22-11.92,2.52-3.52,6.17-6.82,10.26-10.39,7.87-6.72,18.96-17.54,17.56-32.66-.44-3.67-1.96-7.31-4.27-10-2.29-2.72-5.04-4.56-7.67-5.88-5.35-2.63-10.35-3.92-15.2-6.9,2.67,5.18,7.77,8.74,11.34,12.43,3.8,3.67,5.5,7.31,5.08,10.97-.29,3.67-2.33,7.72-5.16,11.3Z"/>
+            <path d="M636.46,425.69c-4.51-6.13-7.79-12.83-8.61-19.64-.82-6.8,1.27-13.29,5.66-18.25,4.55-5.14,10.75-10.13,15.12-16.85,2.18-3.32,4.1-7.31,4-11.72-.2-4.49-3-8.07-6.16-10.05,2.19,3.16,3.51,6.66,2.83,9.86-.61,3.2-2.66,6.02-4.91,8.67-4.69,5.34-10.5,9.6-16.04,15.56-2.68,3.21-4.84,7.05-5.88,11.23-.96,4.18-.99,8.58.12,12.58,2.09,8.06,7.42,14.6,13.86,18.61Z"/>
+            <path d="M679.81,392.76c-2.04,3.13-3.4,6.81-3.73,10.57-.29,3.75.18,7.49,1.46,10.84,2.46,6.73,7.2,12.16,12.91,15.53-3.76-5.46-6.61-11.18-7.77-17.02-1.18-5.84-.21-11.5,2.84-16.11,3.06-4.62,8.24-8.68,12.69-13.79,2.24-2.54,4.31-5.51,5.51-8.91,1.16-3.41,1.18-7.15-.04-10.27-.42,6.88-4.44,11.41-9.2,15.34-4.7,4.04-10.4,7.55-14.67,13.81Z"/>
+          </g>
+        </svg>
+        <p style="color:var(--panel-ink-2);max-width:34ch;margin-block-start:var(--s2);font-size:var(--t-sm)" data-en="Single-origin coffee, roasted in Damascus and dropped forty seconds after first crack." data-ar="قهوة أحادية المصدر، محمّصة في دمشق ومُنزَلة بعد أربعين ثانية من الطقطقة الأولى.">Single-origin coffee, roasted in Damascus and dropped forty seconds after first crack.</p>
+      </div>
+
+      <div>
+        <h4 data-en="Visit" data-ar="زورونا">Visit</h4>
+        <ul>
+          <li><a href="#visit" data-en="Al-Malki, Damascus" data-ar="المالكي، دمشق">Al-Malki, Damascus</a></li>
+          <li><a href="#visit" data-en="Sat–Wed · 08:00–23:00" data-ar="السبت–الأربعاء · 08:00–23:00">Sat–Wed · 08:00–23:00</a></li>
+          <li><a href="tel:+963110000000"><span class="ltr">+963 11 000 0000</span></a></li>
+          <li><a href="mailto:hello@novacoffee.co"><span class="ltr">hello@novacoffee.co</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-en="Follow" data-ar="تابعنا">Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#" data-en="Wholesale enquiries" data-ar="طلبات الجملة">Wholesale enquiries</a></li>
+          <li><a href="#" data-en="Subscription" data-ar="الاشتراك الشهري">Subscription</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-btm">
+      <span data-en="© 2026 NOVA COFFEE — concept project" data-ar="© 2026 نوفا كوفي — مشروع كونسبت">© 2026 NOVA COFFEE — concept project</span>
+      <span data-en="Brand identity &amp; web design — Khaled Salami" data-ar="الهوية البصرية وتصميم الموقع — خالد سلامي">Brand identity &amp; web design — Khaled Salami</span>
+    </div>
+  </div>
+</footer>
+
+<div class="credit"><span class="dot"></span><span data-en="Concept design · Khaled Salami" data-ar="تصميم كونسبت · خالد سلامي">Concept design · Khaled Salami</span></div>
+
+</div>
+
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
